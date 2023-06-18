@@ -1,0 +1,36 @@
+name: pulumi-docker-ssh-issue
+description: Issue example with remote docker
+runtime: yaml
+
+resources:
+  docker-remote:
+    type: pulumi:providers:docker
+
+    # Via connection string only
+    # properties:
+      # host: ssh://user@ip
+
+    # With sshOpts
+    # properties:
+      # host: ssh://ip
+      # sshOpts: [-l, user, -p, 22]
+
+  my-image:
+    type: docker:Image
+    properties:
+      imageName: my-image
+      skipPush: true
+      build:
+        context: .
+        dockerfile: Dockerfile
+
+    # options:
+    #   provider: ${docker-remote}
+
+  my-container:
+    type: docker:Container
+    properties:
+      image: ${my-image.baseImageName}
+
+    # options:
+    #   provider: ${docker-remote}

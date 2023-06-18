@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "pulumi-docker-ssh-issue",
+  "version": "1.0.0",
+  "description": "Issue example with remote docker",
+  "main": "server.js",
+  "author": "Nick K.",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1"
+  }
+}
