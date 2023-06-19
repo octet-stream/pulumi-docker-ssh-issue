@@ -3,17 +3,17 @@ description: Issue example with remote docker
 runtime: yaml
 
 resources:
-  docker-remote:
-    type: pulumi:providers:docker
+  # docker-remote:
+  #   type: pulumi:providers:docker
 
-    # Via connection string only
-    # properties:
-      # host: ssh://user@ip
+  #   # Via connection string only
+  #   # properties:
+  #     # host: ssh://user@ip
 
-    # With sshOpts
-    # properties:
-      # host: ssh://ip
-      # sshOpts: [-l, user, -p, 22]
+  #   # With sshOpts
+  #   # properties:
+  #     # host: ssh://ip
+  #     # sshOpts: [-l, user, -p, 22]
 
   my-image:
     type: docker:Image
