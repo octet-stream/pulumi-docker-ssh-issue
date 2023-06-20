@@ -2,6 +2,11 @@ name: pulumi-docker-ssh-issue
 description: Issue example with remote docker
 runtime: yaml
 
+config:
+  mysql_root_password:
+    type: string
+    secret: true
+
 resources:
   # docker-remote:
   #   type: pulumi:providers:docker
@@ -24,6 +29,11 @@ resources:
         context: .
         dockerfile: Dockerfile
 
+  # mysql-test-image:
+  #   type: docker:RemoteImage
+  #   properties:
+  #     name: mysql:8
+
     # options:
     #   provider: ${docker-remote}
 
@@ -31,6 +41,13 @@ resources:
     type: docker:Container
     properties:
       image: ${my-image.baseImageName}
+
+  # mysql-test-container:
+  #   type: docker:Container
+  #   properties:
+  #     image: ${mysql-test-image.imageId}
+  #     envs:
+  #       - MYSQL_ALLOW_EMPTY_PASSWORD=1
 
     # options:
     #   provider: ${docker-remote}
