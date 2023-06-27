@@ -2,7 +2,11 @@
 
 This repository demonstrates the issue trying connecting to remote Docker via ssh protocol when using Pulumi (YAML runtime)
 
-# Steps to repoduction
+### Resolution
+
+The issue was resolved in [v4.3.0](https://github.com/pulumi/pulumi-docker/releases/tag/v4.3.0)
+
+### Steps to repoduction
 
 Using environment variable:
 
